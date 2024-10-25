@@ -1,6 +1,6 @@
 .vendor-main {
   margin-bottom: 8em;
-  margin-top: 58px;
+  margin-top: 8em;
   overflow: hidden;
 }
 
@@ -8,8 +8,8 @@
   margin: 19px 9px;
 }
 .vendor-top h1 {
-  font-size: x-large;
-  font-weight: 700;
+  font-size: 2em;
+  font-weight: 650;
 }
 .vendor-middle {
   width: 100%;
@@ -26,7 +26,8 @@
 }
 
 .vendor-top {
-  margin: 19px 9px;
+  margin: 1em;
+  margin-top: 2em;
 }
 
 .vendor-middle {
@@ -81,7 +82,18 @@
   font-size: small;
 }
 /* responsive------------------------------------------ */
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
+  .vendor-top {
+    margin-top: 3em;
+    margin-bottom: 5em;
+  }
+  .vendor-main {
+    margin-bottom: 8em;
+    margin-top: -7em;
+    overflow: hidden;
+  }
+}
+@media (min-width: 960px) and (max-width: 1023px) {
   .vendor-bottom {
     bottom: -134%;
     width: 62%;
@@ -89,8 +101,23 @@
   }
 }
 
-/* @media (max-width: 339px) {
+@media (max-width: 355px) {
   .vendor-main {
     margin-bottom: 174px;
+    margin-top: 5em;
   }
-} */
+  .city-grid-container {
+    margin: 10em 1em;
+  }
+  .vendor-top {
+    margin: 1em;
+    margin-top: 1em;
+  }
+}
+
+@media (min-width: 716px) {
+  .vendor-top {
+    margin: 1em;
+    margin-top: 12em;
+  }
+}

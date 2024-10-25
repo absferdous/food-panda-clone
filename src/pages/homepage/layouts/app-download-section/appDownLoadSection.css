@@ -131,9 +131,9 @@
   }
 }
 
-@media (max-width: 339px) {
+@media (max-width: 346px) {
   .appdownload-section-banner {
-    top: 61%;
+    top: 66%;
     left: 6%;
   }
   .appdownload-section-text p {

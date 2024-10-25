@@ -53,8 +53,12 @@ const Footer = () => {
           <LogoBtn />
         </div>
         <div className="footer-branding-sociallinks">
-          <img src={instagram} alt="" />
-          <img src={facebook} alt="" />
+          <div className="footer-branding-sociallinks-logos">
+            <img src={instagram} alt="" />
+          </div>
+          <div className="footer-branding-sociallinks-logos">
+            <img src={facebook} alt="" />
+          </div>
         </div>
         <div className="footer-branding-deliveryhero">
           <img src={deliveryHero} alt="" />
