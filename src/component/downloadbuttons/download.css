@@ -1,0 +1,16 @@
+.download-container button {
+  display: flex;
+}
+
+.download-container button {
+  display: flex;
+  gap: 5px;
+  flex: l;
+  /* flex-direction: column; */
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid white;
+}

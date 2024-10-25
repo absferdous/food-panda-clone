@@ -1,0 +1,39 @@
+.locationbtn {
+  display: flex;
+  /* position: absolute; */
+  /* top: 0; */
+  /* width: 30%; */
+  /* background-color: lightblue; */
+  align-items: center;
+  /* flex-direction: row-reverse; */
+  justify-content: center;
+  align-items: center;
+  /* gap: 5px; */
+}
+
+.locationbtn button {
+  /* background-color: aliceblue; */
+  padding: 9px 6px;
+  /* display: block; */
+  color: black;
+  font-weight: bold;
+}
+.locationbtn button svg {
+  color: #e21b70;
+}
+.locationbtn button svg:hover {
+  color: black;
+}
+
+.normal-button {
+  display: inline-block;
+  padding: 1em 9em;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.footer-lang-btn:hover {
+  background-color: #f7dede;
+}

@@ -1,0 +1,14 @@
+section.text-content-container {
+  margin-top: 20em;
+}
+
+.text-content-heading {
+  font-size: x-large;
+  font-weight: 700;
+  /* padding: 1em 1em; */
+  margin-bottom: 1em;
+}
+.text-content-text {
+  font-weight: 200;
+  line-height: 1.5em;
+}

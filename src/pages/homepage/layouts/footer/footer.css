@@ -1,0 +1,184 @@
+section.footer-container {
+  margin-top: 3em;
+  margin-bottom: 5em;
+}
+
+.footer-seoblock {
+  border-top: 2px solid #f7f7f7;
+  border-bottom: 2px solid #f7f7f7;
+  margin-bottom: 1em;
+  padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+.footer-seoblock-list {
+  list-style: none;
+  /* position: relative; */
+  overflow: hidden;
+  border-right: 1px solid;
+  padding: 1px 8px;
+}
+
+.footer-seoblock-list li a {
+  text-decoration: underline;
+  position: relative;
+  /* overflow: hidden; */
+  z-index: 2;
+  color: black;
+}
+
+.footer-seoblock-list li a::after {
+  transition: 0.3s;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 11%;
+  /* top: 0; */
+  bottom: 0;
+  right: 100%;
+  /* top: 0; */
+  /* overflow: hidden; */
+  background-color: white;
+  /* bottom: 0; */
+  /* left: 100; */
+  /* right: 100%; */
+
+  z-index: -1;
+}
+
+.footer-seoblock-list li a:hover::after {
+  right: 0;
+  background-color: black;
+}
+.footer-language-button {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer-contact-list {
+  columns: 3 300px;
+  margin-top: 1em;
+  /* row-gap: 10px; */
+  text-align: center;
+  /* overflow: hidden; */
+}
+
+.footer-contact-list-child {
+  list-style: none;
+  margin-bottom: 9px;
+}
+
+.footer-contact-list-child li {
+}
+.footer-contact-list-child li a {
+  overflow: hidden;
+  color: black;
+  z-index: 2;
+  position: relative;
+  display: inline-block;
+}
+.footer-contact-list-child li a::after {
+  transition: 0.3s;
+  content: "";
+  width: 100%;
+  height: 10%;
+  background-color: black;
+  bottom: 0;
+  right: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.footer-contact-list-child li a:hover:after {
+  right: 0;
+}
+
+/* footer-bottom */
+.footer-branding-logos {
+  margin-top: 3em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 50px);
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-branding-foodpandalogo {
+  grid-row: 1/1;
+  grid-column: 2/2;
+  text-align: center;
+}
+.footer-branding-sociallinks {
+  grid-row: 2/2;
+  grid-column: 2/2;
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+}
+.footer-branding-sociallinks img {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.footer-branding-deliveryhero {
+  grid-row: 3;
+  grid-column: 2;
+  text-align: center;
+}
+
+@media (min-width: 527px) and (max-width: 765px) {
+  .footer-branding-deliveryhero {
+    grid-row: 1/1;
+    grid-column: 2/4;
+    position: relative;
+    /* border-left: 1px solid black; */
+  }
+  .footer-branding-deliveryhero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 23%;
+    width: 0.3%;
+    height: 100%;
+    border-left: 1px solid black;
+    background-color: black;
+  }
+  .footer-branding-foodpandalogo {
+    grid-row: 1/1;
+    grid-column: 1/3;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-branding-foodpandalogo {
+    grid-column: 1;
+    justify-self: start;
+  }
+  .footer-branding-deliveryhero {
+    grid-column: 1/2;
+    grid-row: 1;
+    justify-self: end;
+    margin-left: 9em;
+    z-index: 1;
+    position: relative;
+  }
+  .footer-branding-deliveryhero::before {
+    content: "";
+    width: 0.3%;
+    height: 100%;
+    top: 0;
+    bottom: 5%;
+    /* border-left: 1px solid black; */
+    background-color: black;
+    z-index: 2;
+    position: absolute;
+  }
+  .footer-branding-sociallinks {
+    grid-row: 1;
+    grid-column: 3;
+    justify-self: end;
+    margin-right: 1em;
+  }
+}
