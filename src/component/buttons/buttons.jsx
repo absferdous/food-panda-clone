@@ -17,7 +17,7 @@ export const LogoBtn = () => {
 export const IconBtn = ({ icon, text, onclick, id }) => {
   return (
     <div className="iconbtn" id={id}>
-      <button>{icon}</button>
+      <button onClick={onclick}>{icon}</button>
     </div>
   );
 };
@@ -59,3 +59,18 @@ export const LocationBtn = ({ icon1, icon2, text, onClick }) => {
     </div>
   );
 };
+
+// export const SignupBtn=({logo,imgurl,title,text})=>{
+//   return(
+//     <>
+//     <div className="signup-btn-container">
+//       <button className="signup-btn">
+//         {imgurl && }
+
+//         <div className="signpup-btn-logo">{logo}</div>
+
+//       </button>
+//     </div>
+//     </>
+//   )
+// }

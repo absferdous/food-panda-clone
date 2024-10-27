@@ -37,3 +37,20 @@
 .footer-lang-btn:hover {
   background-color: #f7dede;
 }
+.logobtn {
+  margin-left: 6px;
+}
+
+.social-signup-btn {
+  /* background-color: blue; */
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  margin: 0px auto;
+  font-size: medium;
+  font-weight: 600;
+}
+
+.facebook {
+  /* background-color: blue; */
+}

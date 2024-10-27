@@ -1,0 +1,111 @@
+.form-container {
+  max-width: 400px;
+  text-align: center;
+  margin: 0px auto;
+  border: 1px solid;
+  border-radius: 4%;
+  height: 550px;
+  position: absolute;
+  background-color: #fff;
+  z-index: 3;
+  top: 4em;
+  left: 5em;
+  cursor: pointer;
+}
+
+.form-facebook-title {
+  text-align: center;
+  margin: 0px auto;
+  padding: 0.5em 2em;
+}
+.form-btn-logo {
+  /* overflow: hidden; */
+  /* position: relative; */
+}
+.form-btn-container {
+  display: flex;
+  justify-content: space-around;
+  /* background-color: steelblue; */
+  /* text-align: center; */
+  margin: 0em 1em;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+.form-btn-title {
+  text-align: center;
+  margin: 0px auto;
+}
+
+.signup-facebook {
+  background-color: steelblue;
+  color: white;
+}
+.signup-google {
+  border: 1px solid black;
+}
+.signup-apple {
+  background-color: black;
+  color: white;
+}
+.form-apple-logo {
+  /* background-color: white; */
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-header {
+  text-align: end;
+}
+.form-header {
+  text-align: end;
+}
+
+.form-welcome {
+  text-align: start;
+  margin-left: 2em;
+  margin-bottom: 2em;
+  line-height: 2em;
+}
+
+.form-welcome-title {
+  font-size: larger;
+}
+
+p {
+}
+
+.form-welcome-title p {
+  font-size: medium;
+}
+.form-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-facebook-logo {
+  width: 20px;
+  margin-left: 1em;
+  background-color: white;
+  border-radius: 99%;
+  /* padding: 1px 1px; */
+  height: 20px;
+}
+.form-footer {
+  margin-top: 3em;
+  font-size: small;
+  color: dimgrey;
+}
+.form-signUp,
+.form-logIn {
+  font-size: medium;
+  background-color: #e21b70;
+  color: white;
+}
+.form-logIn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}

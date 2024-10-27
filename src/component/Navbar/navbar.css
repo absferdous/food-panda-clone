@@ -17,6 +17,8 @@ svg {
 }
 .iconbtn button {
   position: relative;
+  width: 50px;
+  height: 50px;
   z-index: 1;
   /* display: flex; */
   padding: 10px;
@@ -61,10 +63,13 @@ svg {
   align-items: center;
   gap: 5px;
   justify-content: center;
-  border: 1px solid #444;
+  /* border: 1px solid #444; */
   border-radius: 4px;
 }
-
+.languagebtn svg {
+  font-size: large;
+  font-weight: revert-layer;
+}
 @media (min-width: 960px) {
   #usericon {
     display: none;

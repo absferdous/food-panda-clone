@@ -6,11 +6,18 @@ import { IoBagRemoveOutline } from "react-icons/io5";
 import { TbWorld } from "react-icons/tb";
 import "./navbar.css";
 import { IconBtn, LanguageBtn, LogoBtn, PrimaryBtn } from "../buttons/buttons";
+import { useState } from "react";
+import { SignUpForm } from "../forms/forms";
 const Navbar = () => {
+  const [showSignup, setShowSignup] = useState(false);
+  const handleSignUp = () => {
+    setShowSignup(!showSignup);
+  };
   return (
     <div className="navbar">
+      {showSignup && <SignUpForm onClick={handleSignUp} />}
       <div className="navbar-left">
-        <IconBtn icon={<CiUser />} id={"usericon"} />
+        <IconBtn icon={<CiUser />} id={"usericon"} onclick={handleSignUp} />
       </div>
       <div className="navbar-middle">
         <LogoBtn />
