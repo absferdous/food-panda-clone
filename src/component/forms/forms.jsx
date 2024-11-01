@@ -62,3 +62,52 @@ export const SignUpForm = ({ onClick }) => {
     </div>
   );
 };
+
+export const RegForm = () => {
+  return (
+    <div className="RegForm-container ">
+      <div className="partner-reg-form-title">
+        <h3>Ready to grow your business?</h3>
+      </div>
+      <form action="">
+        <div className="partner-reg-form-inputs">
+          <input type="text" placeholder="Business Owner First Name" required />
+
+          <input type="text" placeholder="Business Owner Last Name" required />
+          <input
+            type="email"
+            placeholder="Enter Your Business Email"
+            required
+          />
+        </div>
+        <div className="partner-reg-form-type">
+          <details>
+            <summary>
+              <p>Business Type</p>
+            </summary>
+            <div className="details-option">
+              <p>Resturant</p>
+              <p>shop</p>
+            </div>
+          </details>
+        </div>
+        <div className="partner-reg-form-mobile">
+          <div className="mobile-code">
+            <div className="mobile-code-image">
+              <img src="" alt="" />
+            </div>
+            <div className="mobile-code-text">+880</div>
+          </div>
+          <div className="mobile-number">
+            <input type="text" placeholder="Mobile Number" required />
+          </div>
+        </div>
+        <div className="partner-reg-form-btn-container ">
+          <button type="submit" className="partner-reg-form-btn">
+            Get Started
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
