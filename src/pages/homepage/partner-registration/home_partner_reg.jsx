@@ -10,7 +10,7 @@ import linkedin from "../../../assets/partner_reg_images/linkedin.svg";
 import logo_48 from "../../../assets/partner_reg_images/logo_48.png";
 import logo from "../../../assets/partner_reg_images/logo.svg";
 import { RegForm } from "../../../component/forms/forms";
-// import play_icon from "../../../assets/partner_reg_images/play - icon.svg;";
+import play_icon from "../../../assets/partner_reg_images/playicon.svg";
 import process1x from "../../../assets/partner_reg_images/process1x.png";
 import process2x from "../../../assets/partner_reg_images/process2x.png";
 import process3x from "../../../assets/partner_reg_images/process3x.png";
@@ -20,8 +20,8 @@ import reason1x from "../../../assets/partner_reg_images/reason1x.png";
 import reason2x from "../../../assets/partner_reg_images/reason2x.png";
 import { Opportunities } from "../layouts/oppurtunities/opportunities";
 
-import story_2 from "../../../assets/partner_reg_images/story_1.jpg";
-import story_1 from "../../../assets/partner_reg_images/story_2.jpg";
+import story_1 from "../../../assets/partner_reg_images/story_1.jpg";
+import story_2 from "../../../assets/partner_reg_images/story_2.jpg";
 import video_male from "../../../assets/partner_reg_images/video_male_desktop.png";
 import youtube_icon from "../../../assets/partner_reg_images/youtube.svg";
 
@@ -118,11 +118,18 @@ const PartnerReg = () => {
           {/* <img src={play_icon} alt="icon" /> */}
         </div>
         <div className="video-overlay-text">
-          <h1>Partner with foodpanda today</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-            modi, animi praesentium nisi magnam dolores.
-          </p>
+          <div className="video-overlay-text-title">
+            <h2>Partner with foodpanda today</h2>
+          </div>
+          <div className="video-overlay-text-footer">
+            <p>
+              Take your business to the next level by reaching new customers and
+              boost your sells
+            </p>
+          </div>
+          <div className="video-overlay-text-icon">
+            <img src={play_icon} alt="you" />
+          </div>
         </div>
       </div>
       {/* video overlay */}
@@ -174,33 +181,35 @@ const PartnerReg = () => {
       {/* foodpanda Process */}
       {/* stories */}
       <div className="story-container">
-        <div className="story-pic-one">
-          <img src={story_1} alt="story1" />
+        <div className="story-one">
+          <div className="story-one-left">
+            <img src={story_1} alt="story1" />
+          </div>
+          <div className="story-one-right">
+            <h4>
+              Undoubtedly, you can choose Foodpanda as your delivery partner. I
+              am personally satisfied with foodpanda service.
+            </h4>
+            <p>kini ar khai</p>
+          </div>
         </div>
-        <div className="story-content-two">
-          <p>
-            Undoubtedly, you can choose Foodpanda as your delivery partner. I am
-            personally satisfied with foodpanda service . <br />
-          </p>
+        {/* story-1------------------------------ */}
+        {/* story-2 */}
+        <div className="story-two">
+          <div className="story-two-left">
+            <img src={story_2} alt="story2" />
+          </div>
+          <div className="story-two-right">
+            <h4>
+              My goods have been sold a lot from Foodpanda and I have made a lot
+              of profit during Covid-19 Pandemic. Thanks to their relentless
+              effort.
+            </h4>
+            <p>Abdullah Al-Mamun Bhuiyan</p>
+            <p>Abdullah Vegetable Store, Dhaka</p>
+          </div>
         </div>
-        <div className="story-person-two">
-          <ruby>Abdullah Al Mamun</ruby>
-          <rt>Abdullah store ,Dhaka</rt>
-        </div>
-        <div className="story-person-one">
-          <p>kini ar khai</p>
-        </div>
-        <div className="story-pic-two">
-          <img src={story_2} alt="story2" />
-        </div>
-        <div className="story-content-one">
-          <p>
-            My goods have been sold a lot from Foodpanda and I have made a lot
-            of profit during Covid-19 Pandemic. Thanks to their relentless
-            effort.
-          </p>
-          {/* <p style={{ fontSize: "small" }}>kini ar khai</p> */}
-        </div>
+        {/* story-2 */}
       </div>
       {/* stories */}
       {/* faq */}
