@@ -69,6 +69,11 @@
   max-width: 100%;
   z-index: 1;
 }
+#city-home {
+  .hero-bottom {
+    display: none;
+  }
+}
 /* responsive --------------------------------------------*/
 @media (min-width: 960px) {
   .hero-main {

@@ -12,7 +12,7 @@ const HomePage = () => {
   return (
     <div>
       {/* <Navbar /> */}
-      <Hero />
+      <Hero title={"Its the food and grocesrries you love"} />
       <Vendor
         imgurl={vendorImage}
         heading="You prepare the food, we handle the rest"

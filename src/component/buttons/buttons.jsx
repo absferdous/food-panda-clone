@@ -14,10 +14,10 @@ export const LogoBtn = () => {
   );
 };
 
-export const IconBtn = ({ icon, text, onclick, id }) => {
+export const IconBtn = ({ icon, text, onClick, id, color }) => {
   return (
-    <div className="iconbtn" id={id}>
-      <button onClick={onclick}>{icon}</button>
+    <div className="iconbtn" id={id} style={{ color: color }}>
+      <button onClick={onClick}>{icon}</button>
     </div>
   );
 };

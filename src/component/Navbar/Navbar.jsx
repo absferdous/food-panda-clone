@@ -12,12 +12,13 @@ const Navbar = () => {
   const [showSignup, setShowSignup] = useState(false);
   const handleSignUp = () => {
     setShowSignup(!showSignup);
+    // alert("testing");
   };
   return (
     <div className="navbar">
       {showSignup && <SignUpForm onClick={handleSignUp} />}
       <div className="navbar-left">
-        <IconBtn icon={<CiUser />} id={"usericon"} onclick={handleSignUp} />
+        <IconBtn icon={<CiUser />} id={"usericon"} onClick={handleSignUp} />
       </div>
       <div className="navbar-middle">
         <LogoBtn />

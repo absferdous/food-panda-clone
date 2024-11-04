@@ -14,29 +14,30 @@ import { CiLocationArrow1, CiLocationOn, CiMedicalCross } from "react-icons/ci";
 import { Input } from "../../../../component/inputs/inputs";
 import { LargeBtn, LocationBtn } from "../../../../component/buttons/buttons";
 
-const Hero = () => {
+const Hero = ({ id, home = true, title }) => {
   return (
     <div>
       <div className="hero-main">
         <div className="hero-left">
-          <h1>It's the food and groceries you love, delivered</h1>
+          <h1>{title}</h1>
         </div>
 
         <div className="hero-right">
           <img src={pandapic} alt="pandapic" />
         </div>
-
-        <div className="hero-bottom">
-          <div className="hero-bottom-left">
-            <Input />
-            <div className="hero-bottom-left-child">
-              <LocationBtn text={"Locate me"} icon1={<TbCurrentLocation />} />
+        {home && (
+          <div className="hero-bottom" id={id}>
+            <div className="hero-bottom-left">
+              <Input />
+              <div className="hero-bottom-left-child">
+                <LocationBtn text={"Locate me"} icon1={<TbCurrentLocation />} />
+              </div>
+            </div>
+            <div className="hero-bottom-right">
+              <LargeBtn text={"Find food"} />
             </div>
           </div>
-          <div className="hero-bottom-right">
-            <LargeBtn text={"Find food"} />
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

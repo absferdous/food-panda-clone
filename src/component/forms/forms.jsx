@@ -12,7 +12,7 @@ export const SignUpForm = ({ onClick }) => {
   return (
     <div className="form-container">
       <div className="form-header">
-        <IconBtn icon={<ImCancelCircle />} onclick={onClick} />
+        <IconBtn icon={<ImCancelCircle />} onClick={onClick} />
       </div>
       <div className="form-welcome">
         <div className="form-welcome-title">
