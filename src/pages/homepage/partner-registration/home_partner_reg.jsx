@@ -42,18 +42,21 @@ const PartnerReg = () => {
         </div>
       </div>
       <div className="partner-hero">
-        <div className="hero-big-text">
-          <h1>
-            Boost your revenue <br />
-            with <span>foodpanda!</span>
-          </h1>
+        <div className="partner-hero-content">
+          <div className="hero-big-text">
+            <h2>
+              Boost your revenue <br />
+              with <span>foodpanda!</span>
+            </h2>
+          </div>
+          <div className="partner-small-text">
+            <p>
+              Sign up now and start earning more <br /> with the leading food
+              delivery service foodpanda.
+            </p>
+          </div>
         </div>
-        <div className="partner-small-text">
-          <p>
-            Sign up now and start earning more <br /> with the leading food
-            delivery service foodpanda.
-          </p>
-        </div>
+
         <div className="partner-form">
           <RegForm />
         </div>

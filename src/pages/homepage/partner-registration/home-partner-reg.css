@@ -25,21 +25,31 @@ button.nav-normal-btn {
   font-weight: bolder;
 }
 .partner-hero {
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
   max-width: 100%;
   height: 700px;
-  background-image: url("/@fs/C:/Users/Ferdous/Desktop/ferdousProject/foodPanda/src/assets/partner_reg_images/hero_image_desktop.webp");
+  background-image: url("/src/assets/partner_reg_images/hero_image_desktop.webp");
   /* width: 100%; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 .partner-small-text {
   margin-top: 1em;
   margin-bottom: 1em;
 }
+.hero-big-text h2 {
+  font-weight: 500;
+}
 
+.hero-big-text span {
+  font-weight: 700;
+}
 /* OPPURTINITIES */
 .new-opportunities-container {
   margin-bottom: 3em;
@@ -360,6 +370,10 @@ h4 {
 }
 
 @media (min-width: 769px) {
+  .partner-hero {
+    align-items: baseline;
+    padding-left: 5em;
+  }
   .opportunities-features,
   .foodpanda-process-container {
     display: flex;
@@ -458,8 +472,5 @@ h4 {
     position: absolute;
     top: 3rem;
     right: 16rem;
-  }
-  .partner-form {
-    margin-right: 29em;
   }
 }
