@@ -1,6 +1,6 @@
 import React from "react";
 import { CiUser } from "react-icons/ci";
-import { PiShoppingBagOpen } from "react-icons/pi";
+// import { PiShoppingBagOpen } from "react-icons/pi";
 import { FaChevronDown } from "react-icons/fa";
 import { IoBagRemoveOutline } from "react-icons/io5";
 import { TbWorld } from "react-icons/tb";

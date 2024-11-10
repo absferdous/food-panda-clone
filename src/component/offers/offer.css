@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.content-one,
+.content-two {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background-color: var(--primary-pink);
+  color: white;
+  width: fit-content;
+  padding-inline: 4px;
+  border-radius: 0.5em;
+  font-size: small;
+}
