@@ -9,9 +9,11 @@ import deliveryHero from "../../../../assets/icons/deliveryhero.svg";
 import instagram from "../../../../assets/icons/instragram.svg";
 import facebook from "../../../../assets/icons/facebook.svg";
 import { IconBtn, LogoBtn } from "../../../../component/buttons/buttons";
+import { Outlet } from "react-router-dom";
 const Footer = () => {
   return (
     <section className="footer-container">
+      <Outlet />
       <div className="footer-seoblock">
         {footerSeoBlock.map((i, index) => {
           return (

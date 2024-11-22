@@ -14,24 +14,24 @@ const CityResturant = ({ name, type, ratings, offer, image, reviews }) => {
   //   const background = { background };
   return (
     <>
-      <div className="container">
-        <div className="header">
-          <div className="header-right">
+      <div className="cityresturant-container">
+        <div className="cityresturant-header">
+          <div className="cityresturant-header-right">
             <TiHeartOutline />
           </div>
-          <div className="header-left">
+          <div className="cityresturant-header-left">
             <Offer offer={offer} />
           </div>
         </div>
-        <div className="banner">
+        <div className="cityresturant-banner">
           <img src={image} alt="banner" />
         </div>
-        <div className="footer">
-          <div className="footer-left">
-            <h3>{name}</h3>
+        <div className="cityresturant-footer">
+          <div className="cityresturant-footer-left">
+            <h3 className="text-ellipsis">{name}</h3>
             <p>{type}</p>
           </div>
-          <div className="footer-right">
+          <div className="cityresturant-footer-right">
             <FaStar />
             <strong>{ratings}</strong> <span>{reviews}</span>
           </div>

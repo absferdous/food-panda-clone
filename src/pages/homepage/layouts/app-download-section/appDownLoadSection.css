@@ -51,15 +51,22 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  width: 100px;
 }
-
+.appdownload-section-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+}
 .appdownload-section-banner {
   position: absolute;
   top: 47%;
   right: 4%;
 }
 .appdownload-section-banner img {
-  width: 100%;
+  width: 80%;
 }
 /* resposnive-------------------------------- */
 @media (min-width: 960px) {
@@ -75,9 +82,9 @@
     gap: 10px;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     grid-row: 3 / 3;
-    grid-column: 1 / 3;
+    grid-column: 2 / 3;
   }
 
   .appdownload-section-text {

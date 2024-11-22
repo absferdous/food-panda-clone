@@ -1,6 +1,53 @@
 .city-home-addressbar {
   /* position: fixed; */
 }
+.allrestaurant-grid {
+  /* background-color: wheat; */
+  columns: 3 330px;
+  margin-inline: 20px;
+}
+.allresturant-title {
+  margin-inline: 1.2em;
+}
 .single-suggesstions {
+  margin-top: 0.7em;
   margin-bottom: 1em;
+  padding-inline: 0.5em;
+  text-align: start;
+}
+
+.near-city {
+  margin-bottom: 0.5em;
+  list-style: none;
+  padding-inline: 1em;
+  padding-block: 0.3em;
+  color: black;
+  position: relative;
+  overflow: hidden;
+}
+.near-city li {
+  overflow: hidden;
+}
+
+.near-city li a {
+  color: black;
+  z-index: 2;
+  position: relative;
+}
+
+.near-city li a:after {
+  transition: 0.4s;
+  content: "";
+  width: 100%;
+  height: 10%;
+  right: 100%;
+  bottom: 0;
+  position: absolute;
+  background-color: white;
+  z-index: -1;
+}
+.near-city li a:hover:after {
+  right: 0;
+  /* width: 100%; */
+  background-color: black;
 }

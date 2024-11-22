@@ -330,7 +330,7 @@ h4 {
   height: 60px;
   position: absolute;
   bottom: -226rem;
-  right: -19rem;
+  left: 71.7rem;
   border: 1px solid blue;
   transition: 0.9s ease-in;
 }
@@ -338,7 +338,7 @@ h4 {
   font-size: small;
 }
 .recaptcha-container:hover {
-  right: -6rem;
+  left: 59rem;
 }
 .recaptcha-logo {
   background-color: #fff;

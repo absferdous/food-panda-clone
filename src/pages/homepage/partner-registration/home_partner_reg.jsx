@@ -306,7 +306,7 @@ const PartnerReg = () => {
       {/* footer */}
       <div className="partner-footer-container">
         <div className="partner-footer-container-header">
-          <img src={logo} alt="brandlogo" />
+          <img src={logo} alt="brandlogo" className="branding-logos" />
         </div>
         <div className="partner-footer-container-middle">
           <div className="partner-footer-container-col1">

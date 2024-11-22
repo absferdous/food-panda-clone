@@ -1,8 +1,17 @@
 import React from "react";
 import "./vendor.css";
+
 import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
+import { useNavigateWithScroll } from "../../../../hooks/MyHooks";
 
 const Vendor = ({ heading, imgurl, subHeading, paragraph = [] }) => {
+  const navigate = useNavigateWithScroll();
+
+  const handleNavigate = () => {
+    navigate("/partner");
+  };
+
   return (
     <section>
       <div className="vendor-main">
@@ -24,7 +33,7 @@ const Vendor = ({ heading, imgurl, subHeading, paragraph = [] }) => {
             );
           })}
 
-          <button>Get started</button>
+          <button onClick={handleNavigate}>Get started</button>
         </div>
       </div>
     </section>

@@ -1,12 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import { BrandNameLogo, PandaLogo } from "../../assets/icons/icons";
 import heroPanda from "../../assets/image/heropanda.webp";
 import "./buttons.css";
+import { useNavigateWithScroll } from "../../hooks/MyHooks";
 
 export const LogoBtn = () => {
+  const navigateWithScroll = useNavigateWithScroll();
+  const handleNavigate = () => {
+    navigateWithScroll("/");
+  };
   return (
     <>
       <div className="logobtn">
-        <button className="">
+        <button className="" onClick={handleNavigate}>
           <PandaLogo /> <BrandNameLogo />
         </button>
       </div>

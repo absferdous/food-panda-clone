@@ -4,7 +4,7 @@ import { RiDiscountPercentFill } from "react-icons/ri";
 
 const Offer = ({ offer }) => {
   return (
-    <div className="container">
+    <div className="offer-container">
       <div className="content-one">
         <RiDiscountPercentFill />
 

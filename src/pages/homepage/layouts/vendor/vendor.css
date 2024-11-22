@@ -1,11 +1,11 @@
 .vendor-main {
   margin-bottom: 8em;
-  margin-top: 8em;
+  /* margin-top: 8em; */
   overflow: hidden;
 }
 
 .vendor-top {
-  margin: 19px 9px;
+  /* margin: 19px 9px; */
 }
 .vendor-top h1 {
   font-size: 2em;
@@ -27,7 +27,7 @@
 
 .vendor-top {
   margin: 1em;
-  margin-top: 2em;
+  /* margin-top: 2em; */
 }
 
 .vendor-middle {
@@ -89,13 +89,13 @@
   }
   .vendor-main {
     margin-bottom: 8em;
-    margin-top: -7em;
+    /* margin-top: -7em; */
     overflow: hidden;
   }
 }
 @media (min-width: 960px) and (max-width: 1023px) {
   .vendor-bottom {
-    bottom: -134%;
+    bottom: -91%;
     width: 62%;
     right: 32%;
   }
@@ -118,6 +118,6 @@
 @media (min-width: 716px) {
   .vendor-top {
     margin: 1em;
-    margin-top: 12em;
+    /* margin-top: 12em; */
   }
 }

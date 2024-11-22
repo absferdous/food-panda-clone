@@ -6,49 +6,64 @@ import Hero from "../homepage/layouts/hero/Hero";
 import BreadCrumb from "../../component/breadcrumbs/BreadCrumb";
 import CityResturant from "../homepage/layouts/city-restaurents/CityResturant";
 import TextContent from "../../component/textContent/textContent";
-import Footer from "../homepage/layouts/footer/Footer";
+// import Footer from "../homepage/layouts/footer/Footer";
 import { DownloadBar } from "../../component/downloadbuttons/DownloadButton";
 import googlePlay from "../../assets/partner_reg_images/googlePlay.svg";
 import appleStore from "../../assets/partner_reg_images/appleStore.svg";
 import Suggesstion from "../homepage/layouts/suggesstions/Suggesstion";
+import { useLocation } from "react-router-dom";
 
 const CityHome = () => {
+  const location = useLocation();
   const sylhet = cityData.filter((item) => item.city === "sylhet");
+  console.log("location-testing");
+  console.log(location.state);
+  const currentCity = cityData.filter(
+    (item) => item.city === location.state.name.toLowerCase()
+  );
+
+  const currentCityName = location.state.name.toLowerCase();
+
   const bengali = sylhet.filter((item) => item.cuisine === "Bangladeshi");
   const fastFood = sylhet.filter((item) => item.cuisine === "Fast Food");
   const indian = sylhet.filter((item) => item.cuisine === "Indian");
+  console.log(location.state);
+  console.log("currentCity");
+  console.log(currentCity);
 
   return (
     <>
       <div className="city-home-container">
         <div className="city-home-addressbar">
-          <AddressBar cityName={"Sylhet"} />
+          <AddressBar cityName={location.state.name} />
         </div>
         <div className="city-home-hero">
           <Hero
             home={false}
-            title={"Food Delivery from Sylhet’s Best Restaurants"}
+            title={`Food Delivery from ${currentCityName}’s Best Restaurants`}
           />
         </div>
-        <BreadCrumb cityName={"sylhet"} />
+        <BreadCrumb cityName={currentCityName} />
         <div className="allrestaurant">
           <div className="allresturant-title">
             <h1>All restuarents</h1>
           </div>
           <div className="allrestaurant-grid">
-            {sylhet.map((item) => {
-              return (
-                <>
-                  <CityResturant
-                    name={item.name}
-                    type={item.cuisine}
-                    ratings={item.ratings}
-                    offer={item.offer}
-                    image={item.image}
-                    reviews={item.reviews}
-                  />
-                </>
-              );
+            {currentCity.map((item) => {
+              if (item !== null) {
+                return (
+                  <>
+                    <CityResturant
+                      name={item.name}
+                      type={item.cuisine}
+                      ratings={item.ratings}
+                      offer={item.offer}
+                      image={item.image}
+                      reviews={item.reviews}
+                    />
+                  </>
+                );
+              }
             })}
           </div>
           <div className="contents-text">
@@ -85,7 +100,7 @@ const CityHome = () => {
         </div>
         <div className="city-restaurents-suggestions">
           <div className="single-suggesstions">
-            <h4>Bengali food delivery in Sylhet</h4>
+            <h4>Bengali food delivery in {currentCityName}</h4>
             {bengali.map((item, index) => {
               if (index < 6) {
                 return <Suggesstion name={item.name} key={item.id} />;
@@ -93,7 +108,7 @@ const CityHome = () => {
             })}
           </div>
           <div className="single-suggesstions">
-            <h4>Indian food delivery in Sylhet</h4>
+            <h4>Indian food delivery in {currentCityName}</h4>
             {indian.map((item, index) => {
               if (index < 6) {
                 return <Suggesstion name={item.name} key={item.id} />;
@@ -101,17 +116,37 @@ const CityHome = () => {
             })}
           </div>
           <div className="single-suggesstions">
-            <h4>fast food delivery in Sylhet</h4>
+            <h4>fast food delivery in {currentCityName}</h4>
             {fastFood.map((item, index) => {
               if (index < 6) {
                 return <Suggesstion name={item.name} key={item.id} />;
               }
             })}
           </div>
+
+          {/* <div className="near-city">
+            <h3>Near Sylhet</h3>
+
+            <li>
+              <a href="">Resturant in Moulvibazar</a>
+            </li>
+            <li>
+              <a href="">Resturant in Sunamganj</a>
+            </li>
+            <li>
+              <a href="">Resturant in Habiganj</a>
+            </li>
+            <li>
+              <a href="">Resturant in Netrokona</a>
+            </li>
+            <li>
+              <a href="">All cities in Bangladesh</a>
+            </li>
+          </div> */}
         </div>
-        <div className="city-home-footer">
+        {/* <div className="city-home-footer">
           <Footer />
-        </div>
+        </div> */}
       </div>
     </>
   );
