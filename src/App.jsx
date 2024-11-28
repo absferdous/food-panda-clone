@@ -11,19 +11,63 @@ import HomePage from "./pages/homepage/HomePage";
 // import HomePage from "./pages/homepage/HomePage";
 // import Footer from "./pages/homepage/layouts/footer/Footer";
 // import PartnerReg from "./pages/homepage/partner-registration/home_partner_reg";
+const DefaultLayout = ({ children }) => {
+  return (
+    <>
+      <Navbar />
 
+      {children}
+
+      <Footer />
+    </>
+  );
+};
+
+const MinimalLayout = ({ children }) => {
+  return;
+  {
+    children;
+  }
+};
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/city" element={<CityHome />} />
-          <Route path="/partner" element={<PartnerReg />} />
+          <Route
+            path="/"
+            element={
+              <DefaultLayout>
+                <HomePage />
+              </DefaultLayout>
+            }
+          />
+          <Route
+            path="/city"
+            element={
+              <DefaultLayout>
+                <CityHome />
+              </DefaultLayout>
+            }
+          />
+          <Route
+            path="/rest-profile"
+            element={
+              <DefaultLayout>
+                <RestaurantProfile />
+              </DefaultLayout>
+            }
+          />
+          <Route
+            path="/partner"
+            element={
+              <MinimalLayout>
+                <PartnerReg />
+              </MinimalLayout>
+            }
+          />
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
-        <Footer />
       </Router>
     </>
   );

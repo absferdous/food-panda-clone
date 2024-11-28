@@ -106,9 +106,14 @@ section.footer-container {
 }
 
 .footer-branding-foodpandalogo {
-  grid-row: 1/1;
-  grid-column: 2/2;
+  grid-row: 2;
+  grid-column: 1;
+  width: 250px;
+
   text-align: center;
+  /* display: flex; */
+  justify-content: center;
+  align-content: stretch;
 }
 .footer-branding-sociallinks {
   grid-row: 2/2;
@@ -126,6 +131,8 @@ section.footer-container {
   display: block;
   overflow: hidden;
   padding: 1px 2px;
+  width: 35px;
+  height: 35px;
 }
 .footer-branding-sociallinks-logos:after {
   content: "";
@@ -152,7 +159,7 @@ section.footer-container {
 }
 
 .footer-branding-deliveryhero {
-  grid-row: 3;
+  grid-row: 2;
   grid-column: 3/3;
   text-align: center;
   width: 220px;

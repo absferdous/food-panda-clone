@@ -80,3 +80,13 @@ export const LocationBtn = ({ icon1, icon2, text, onClick }) => {
 //     </>
 //   )
 // }
+export const RoundBtnWithSymbol = ({ icon, onClick, size = "35" }) => {
+  return (
+    <div
+      className="round-btn-container"
+      style={{ width: `${size}px`, height: `${size}px` }}
+    >
+      <button>{icon}</button>
+    </div>
+  );
+};

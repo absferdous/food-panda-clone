@@ -1,4 +1,11 @@
-.container {
-  margin: 0px auto;
+.restaurant-profile-container {
+  margin-block: 3.1em;
   width: 100%;
+  position: relative;
+  /* margin-inline: 1em; */
+}
+.restaurant-profile-search-bar {
+  position: fixed;
+  top: 14em;
+  z-index: 15;
 }

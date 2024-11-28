@@ -1,9 +1,9 @@
-.container {
+.profile-card-container {
   width: 100%;
-  margin: 0px auto;
+  /* margin: 0px auto; */
 }
 
-.header {
+.profile-card-header {
   display: flex;
   /* justify-content: space-around; */
   align-items: stretch;
@@ -12,17 +12,25 @@
   position: relative;
   margin-inline: 0.5em;
 }
-.header-left {
+.profile-card-header-left {
   text-align: center;
   margin-bottom: 2em;
   /* background-color: salmon; */
 }
-.header-left-banner {
-  background-color: wheat;
+.profile-card-header-left-banner {
+  background-color: lightgrey;
   height: 100px;
   width: 100px;
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }
-.header-left-schedule {
+.profile-card-header-left-banner svg {
+  font-size: xxx-large;
+}
+.profile-card-header-left-schedule {
   position: absolute;
   top: 50px;
   left: 50px;
@@ -30,36 +38,51 @@
 
   /* line-height: 0.7; */
 }
-.header-right {
+.profile-card-header-right {
   /* display: flex; */
   align-items: stretch;
   width: 100%;
   height: 100px;
 }
-.header-right-top {
+.profile-card-header-right-top {
   display: flex;
   align-items: stretch;
-  gap: 5px;
+  gap: 7px;
   text-decoration: none;
 }
-.header-right-top li {
+.profile-card-header-right-top li {
   list-style: none;
 }
-.header-right-top li a {
+.profile-card-header-right-top li a {
   text-decoration: none;
   color: gray;
+  position: relative;
 }
 
-.header-right-top li a::after {
+.profile-card-header-right-top li a::after {
   content: ".";
+  width: 100%;
+  height: 100%;
+  /* background-color: aliceblue; */
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  z-index: -2;
 }
-.header-left-orderdetail {
+.profile-card-header-right-title {
+  margin-block: 8px;
+}
+.profile-card-header-left-orderdetail {
   font-size: small;
   text-align: left;
+  margin-top: 0.8em;
 }
 
 /* profile reviews*/
-.profile-review {
+.profile-card-profile-review {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -94,7 +117,7 @@
 /* profile reviews*/
 /* favourite button */
 .favorite-button {
-  width: 97%;
+  width: 90%;
   height: 46px;
   display: flex;
   justify-content: center;
@@ -104,7 +127,7 @@
   border-radius: 8px;
   margin: 0px auto;
 }
-.footer {
+.profile-card-footer {
   margin-block: 1em;
   font-size: 14px;
   /* display: flex; */
@@ -113,11 +136,11 @@
   color: dimgrey;
   margin-inline: 0.5em;
 }
-.footer p span a {
+.profile-card-footer p span a {
   color: var(--primary-pink);
   font-weight: 600;
 }
-.address {
+.profile-card-profile-card-address {
   width: 100%;
 }
 .open-map {
@@ -126,3 +149,93 @@
   /* text-align: end; */
 }
 /* favourite button */
+
+/* 
+------------------DEALCARD------------------- */
+.deal-card-container {
+  margin: 1em;
+}
+.deal-card-title {
+  margin-bottom: 1em;
+}
+.deal-card-content {
+  background-color: #fceff5;
+  border-radius: 10px;
+  padding: 1em;
+  width: 300px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+.deal-card-single-offer-header {
+  display: flex;
+  align-items: center;
+  color: var(--primary-pink);
+  font-weight: 500;
+}
+.deal-card-single-offer {
+  font-size: small;
+  font-weight: lighter;
+}
+.deal-card-single-offer-footer-logo {
+  /* background-color: aliceblue; */
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  right: -14px;
+  top: 33px;
+}
+
+.deal-card-single-offer-footer-logo svg {
+  font-size: 80px;
+  color: #e21b70;
+}
+.deal-card-single-offer-details {
+  width: 80%;
+  padding-inline: 5px;
+}
+
+.deal-card-content:hover,
+.item-profile-card-container:hover {
+  transform: scale(1.01);
+  transition: 0.3s ease;
+  background-color: #f1d6e2;
+}
+
+/* ITemPRofile card--------------------------------------------------------------------------- */
+.item-profile-card-container {
+  width: 100%;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.item-profile-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.item-profile-card-right {
+  width: 120px;
+  /* position: relative; */
+  height: 120px;
+  border-radius: 8px;
+  background-color: lightgray;
+  z-index: -1;
+}
+.item-profile-card-right-btn {
+  position: absolute;
+  z-index: 1;
+  bottom: 24px;
+  right: 20px;
+}
+.item-name,
+.item-price {
+  color: var(--primary-pink);
+}
+.item-description {
+  color: grey;
+}
