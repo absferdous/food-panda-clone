@@ -6,6 +6,36 @@
 }
 .restaurant-profile-search-bar {
   position: fixed;
-  top: 14em;
+  top: 34em;
   z-index: 15;
+}
+
+/* popular container */
+.restaurant-profile-popular-container {
+  margin: 1em;
+}
+.restaurant-profile-popular-header-title {
+  display: flex;
+}
+.restaurant-profile-popular-header-title svg {
+  color: gold;
+}
+.restaurant-profile-popular-header-description {
+  color: grey;
+  font-size: smaller;
+  margin-block: 1em;
+}
+
+.restaurant-profile-popular-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+
+  width: 100%;
+}
+/* responsive */
+@media (min-width: 768px) {
+  .restaurant-profile-popular-items {
+    width: 60%;
+  }
 }

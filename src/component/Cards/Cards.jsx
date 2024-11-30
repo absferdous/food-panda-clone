@@ -8,14 +8,22 @@ import { IoMdAdd } from "react-icons/io";
 import { CiHeart } from "react-icons/ci";
 import Offer from "../offers/Offer";
 import { RoundBtnWithSymbol } from "../buttons/buttons";
-export const ProfileCard = ({ brandlogo, name, ratings }) => {
+
+export const ProfileCard = ({
+  image,
+  brandlogo,
+  name,
+  ratings,
+  address,
+  reviews,
+}) => {
   return (
     <>
       <div className="profile-card-container">
         <div className="profile-card-header">
           <div className="profile-card-header-left">
             <div className="profile-card-header-left-banner">
-              <SiFoodpanda />
+              <img src={image} alt="" className="profile-card-image" />
             </div>
             {/* <div className="profile-card-header-left-schedule">
               <p>closed untill</p>
@@ -45,7 +53,7 @@ export const ProfileCard = ({ brandlogo, name, ratings }) => {
               </li>
             </div>
             <div className="profile-card-header-right-title">
-              <h3>Q-Bistro-Noyasorok</h3>
+              <h3>{name}</h3>
             </div>
           </div>
           {/* right */}
@@ -54,7 +62,8 @@ export const ProfileCard = ({ brandlogo, name, ratings }) => {
 
         <div className="profile-card-profile-review">
           <div className="ratings">
-            <FaStar /> <strong>4.1/5</strong>(2000+)
+            <FaStar /> <strong>{ratings}</strong>
+            {reviews}
           </div>
           <div className="see-reviews">
             <a href="">See reviews</a>
@@ -72,8 +81,7 @@ export const ProfileCard = ({ brandlogo, name, ratings }) => {
         {/* footer */}
         <div className="profile-card-footer">
           <p>
-            15/A Bihongo, Manikpir Road.Noyasorok (Sylhet Science
-            Collage)10199.6 km away{" "}
+            {address}
             <span>
               <a href="">open maps</a>
             </span>
@@ -114,22 +122,32 @@ export const DealsCard = () => {
   );
 };
 
-export const ItemProfileCard = () => {
+export const ItemProfileCard = ({
+  tag,
+  name,
+  type,
+  price,
+  price_desc,
+  detail,
+  image,
+}) => {
   return (
     <div className="item-profile-card-container">
       <div className="item-profile-card-left">
         <div className="item-name">
-          <h3>Firni</h3>
+          <h3>{name}</h3>
         </div>
         <div className="item-price">
-          <p>TK 63</p>
+          <p>{price_desc}</p>
         </div>
         <div className="item-description">
-          <p>Rich in flavous with right amount of sweetness</p>
+          <p>{detail}</p>
         </div>
       </div>
       <div className="item-profile-card-right">
-        <div className="item-profile-card-right-image"></div>
+        <div className="item-profile-card-right-image">
+          <img src={image} alt="" />
+        </div>
       </div>
       <div className="item-profile-card-right-btn">
         <RoundBtnWithSymbol icon={<IoMdAdd />} />
