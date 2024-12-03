@@ -12,17 +12,21 @@ const HomePage = () => {
   return (
     <div className="homepage-container">
       {/* <Navbar /> */}
-      <Hero title={"Its the food and grocesrries you love"} />
-      <Vendor
-        imgurl={vendorImage}
-        heading="You prepare the food, we handle the rest"
-        subHeading="List your restaurant or shop on foodpanda"
-        paragraph={[
-          "Would you like millions of new customers to enjoy your amazing food and groceries? So would we!",
-          "It's simple: we list your menu and product lists online, help you process orders, pick them up, and deliver them to hungry pandas – in a heartbeat!",
-          "Interested? Let's start our partnership today!",
-        ]}
-      />
+      <div className="homepage-hero">
+        <Hero title={"Its the food and grocesrries you love"} />
+      </div>
+      <div className="homepage-vendor">
+        <Vendor
+          imgurl={vendorImage}
+          heading="You prepare the food, we handle the rest"
+          subHeading="List your restaurant or shop on foodpanda"
+          paragraph={[
+            "Would you like millions of new customers to enjoy your amazing food and groceries? So would we!",
+            "It's simple: we list your menu and product lists online, help you process orders, pick them up, and deliver them to hungry pandas – in a heartbeat!",
+            "Interested? Let's start our partnership today!",
+          ]}
+        />
+      </div>
       <div className="homepage-section">
         <CityGrid />
       </div>

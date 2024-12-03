@@ -38,21 +38,26 @@
 .city-grid-child a {
   text-decoration: none;
   border: 1px solid white;
-  padding: 10px 15px;
+  padding: 7px 15px;
   border-radius: 12px;
   position: absolute;
   bottom: 13px;
   left: 8px;
   z-index: 1;
   background-color: white;
-  font-size: small;
+  font-size: x-small;
   font-weight: 600;
 }
 .city-grid-container h1 {
-  font-size: larger;
+  /* font-size: larger; */
   font-weight: 700;
 }
 /* responsive------------------------------------------------ */
+@media (min-width: 760px) {
+  .city-grid-child a {
+    font-size: small;
+  }
+}
 @media (min-width: 960px) {
   .city-grid-main {
     grid-template-rows: 1fr 1fr 1fr;

@@ -33,6 +33,18 @@
 
   width: 100%;
 }
+.restaurant-profile-popular-single-item h3 {
+  padding: 10px;
+}
+.restaurant-profile-popular-single-item {
+  margin-inline: 1em;
+}
+
+.restaurant-profile-product-detail {
+  position: absolute;
+  z-index: 10;
+  top: 15rem;
+}
 /* responsive */
 @media (min-width: 768px) {
   .restaurant-profile-popular-items {

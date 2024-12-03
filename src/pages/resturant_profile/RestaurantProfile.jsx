@@ -5,14 +5,16 @@ import "./restaurant-profile.css";
 import { FaFire } from "react-icons/fa";
 import AddressBar from "../../component/addressbar/AddressBar";
 import BreadCrumb from "../../component/breadcrumbs/BreadCrumb";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   DealsCard,
   ItemProfileCard,
   ProfileCard,
 } from "../../component/Cards/Cards";
 import { useState } from "react";
+import { toggler } from "../../myFunc/myfunc";
 import { MenuSearchBar } from "../../component/bars/Bars";
+import { ProductDetails } from "../../component/pop-ups/pop_ups";
 
 const RestaurantProfile = () => {
   const { state } = useLocation();
@@ -29,7 +31,16 @@ const RestaurantProfile = () => {
     address,
   } = state;
   const [type, setType] = useState(null);
+  const [product, setproduct] = useState(null);
   const [loading, setloading] = useState(true);
+  const [showProductDetail, setshowProductDetail] = useState(false);
+
+  const handleProduct = (productData) => {
+    setshowProductDetail(true);
+    setproduct(productData);
+    alert("testing product");
+  };
+
   const restaurantType = state.cuisine;
   useEffect(() => {
     fetch(
@@ -43,14 +54,8 @@ const RestaurantProfile = () => {
   }, []);
   const popularDishes = type && type.filter((item) => item.tag === "Popular");
 
-  const signatureItems =
-    type && type.filter((item) => item.tag === "Signature Items");
-
-  const appetizers = type && type.filter((item) => item.tag === "Appetizers");
-  const mainDishes = type && type.filter((item) => item.tag === "Mains");
-
-  // console.log("recieved the data");
-  // console.log(type);
+  console.log("recieved the data");
+  console.log(type);
   // console.log("popular");
   // console.log(popularDishes);
 
@@ -85,6 +90,7 @@ const RestaurantProfile = () => {
                 <div
                   className="restaurant-profile-popular-single-item"
                   key={index}
+                  onClick={() => handleProduct(item)}
                 >
                   <ItemProfileCard {...item} />
                 </div>
@@ -103,20 +109,36 @@ const RestaurantProfile = () => {
           </div>
         </div>
         <div className="restaurant-profile-popular-items">
-          {mainDishes &&
-            mainDishes.map((item, index) => {
-              return (
-                <div
-                  className="restaurant-profile-popular-single-item"
-                  key={index}
-                >
-                  <ItemProfileCard {...item} />
-                </div>
-              );
-            })}
+          {type &&
+            type
+              .filter((item) => item.cuisine !== "Popular")
+              .map((item, index) => {
+                return (
+                  <div
+                    className="restaurant-profile-popular-single-item"
+                    key={index}
+                  >
+                    <h3>{item.tag}</h3>
+                    <ItemProfileCard {...item} />
+                  </div>
+                );
+              })}
         </div>
       </div>
       {/* main */}
+
+      {/* product-deatil-pop-up */}
+
+      {showProductDetail && (
+        <div className="restaurant-profile-product-detail">
+          <ProductDetails
+            product={product}
+            onClick={() => toggler(setshowProductDetail)}
+          />
+        </div>
+      )}
+
+      {/* product-deatil-pop-up */}
     </div>
   );
 };

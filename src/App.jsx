@@ -7,6 +7,7 @@ import RestaurantProfile from "./pages/resturant_profile/RestaurantProfile";
 import PartnerReg from "./pages/homepage/partner-registration/home_partner_reg";
 import Footer from "./pages/homepage/layouts/footer/Footer";
 import HomePage from "./pages/homepage/HomePage";
+import PlayGround from "./pages/play-ground/PlayGround";
 // import { FindFoodPopup } from "./component/pop-ups/pop_ups";
 // import HomePage from "./pages/homepage/HomePage";
 // import Footer from "./pages/homepage/layouts/footer/Footer";
@@ -67,6 +68,7 @@ function App() {
             }
           />
           {/* <Route path="*" element={<NotFound />} /> */}
+          <Route path="play-ground" element={<PlayGround />} />
         </Routes>
       </Router>
     </>

@@ -86,7 +86,7 @@ export const RoundBtnWithSymbol = ({ icon, onClick, size = "35" }) => {
       className="round-btn-container"
       style={{ width: `${size}px`, height: `${size}px` }}
     >
-      <button>{icon}</button>
+      <button onClick={onClick}>{icon}</button>
     </div>
   );
 };

@@ -1,0 +1,112 @@
+/* addAddress Popup */
+.add-address-popup-container {
+  border: 1px solid lightgray;
+  padding: 1em;
+  border-radius: 10px;
+  width: 400px;
+  background-color: #fff;
+
+  /* height: 200px; */
+}
+.add-address-popup-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+.add-address-popup-middle {
+  padding: 1em;
+  text-align: left;
+  margin: 0;
+  color: grey;
+}
+.add-address-popup-footer {
+  display: flex;
+  /* text-align: center; */
+  align-items: center;
+  justify-content: center;
+  /* justify-content: unset; */
+  width: 150px;
+  height: 50px;
+  margin-left: auto;
+  padding: 10px 12px;
+  background-color: var(--primary-pink);
+  /* margin-bottom: 1em; */
+  border-radius: 10px;
+}
+.add-address-popup-footer p {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+.add-address-popup-right svg {
+  font-size: 20px;
+}
+
+/* -------------------------------------product-detail-popup */
+.product-detail-container {
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  height: 600px;
+  overflow: scroll;
+  padding: 1em;
+  p {
+    color: grey;
+  }
+
+  h3 {
+    margin-top: 1em;
+  }
+}
+.product-detail-banner {
+  width: 100%;
+  height: 300px;
+  background-color: lightblue;
+  border-radius: 10px;
+}
+.product-detail-instructions-input input {
+  width: 100%;
+  height: 200px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 1em;
+  text-align: start;
+  /* margin-bottom: auto; */
+}
+.product-detail-banner {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+.product-detail-banner img {
+  height: 100%;
+}
+.product-detail-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+.product-detail-footer-left {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 1em;
+}
+.product-detail-footer-right {
+  flex: 1;
+}
+.product-detail-price {
+  font-weight: bold;
+  color: var(--primary-pink);
+}
+.product-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.product-detail-banner-button {
+  position: absolute;
+  right: 9px;
+  top: 9px;
+}
