@@ -11,17 +11,15 @@ import { DownloadBar } from "../../component/downloadbuttons/DownloadButton";
 import googlePlay from "../../assets/partner_reg_images/googlePlay.svg";
 import appleStore from "../../assets/partner_reg_images/appleStore.svg";
 import Suggesstion from "../homepage/layouts/suggesstions/Suggesstion";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const CityHome = () => {
   const navigate = useNavigate();
-  const { state } = useLocation();
-  console.log(state);
+  const { city_name } = useParams();
   const [newCityData, setNewCityData] = useState(null);
   const [loading, setloading] = useState(true);
-  const cityName = state.name.toLowerCase();
   useEffect(() => {
-    fetch(`https://restaurant-server-ni4y.onrender.com/api/city/${cityName}`)
+    fetch(`https://restaurant-server-ni4y.onrender.com/api/city/${city_name}`)
       .then((response) => response.json())
       .then((result) => setNewCityData(result))
       .catch((error) => console.error("error fetching data", error))
@@ -30,14 +28,12 @@ const CityHome = () => {
   // console.log("testing api fetching");
   // console.log(newCityData);
   // const newFliterdCity = newCityData.filter(
-  //   (item) => item.city === state.name.toLowerCase()
+  //   (item) => item.city === city_name.toLowerCase()
   // );
 
-  const handleNavigate = (city) => {
-    navigate("/rest-profile", { state: city });
+  const handleNavigate = (id) => {
+    navigate(`/rest-profile/${id}`);
   };
-
-  console.log(cityName);
 
   // const bengali = cityName.filter((item) => item.cuisine === "Bangladeshi");
   // const fastFood = cityName.filter((item) => item.cuisine === "Fast Food");
@@ -51,15 +47,15 @@ const CityHome = () => {
       {newCityData && (
         <div className="city-home-container">
           <div className="city-home-addressbar">
-            <AddressBar cityName={state.name} />
+            <AddressBar cityName={city_name} />
           </div>
           <div className="city-home-hero">
             <Hero
               home={false}
-              title={`Food Delivery from ${cityName}’s Best Restaurants`}
+              title={`Food Delivery from ${city_name}’s Best Restaurants`}
             />
           </div>
-          <BreadCrumb cityName={cityName} />
+          <BreadCrumb cityName={city_name} />
           <div className="allrestaurant">
             <div className="allresturant-title">
               <h1>All restuarents</h1>
@@ -70,10 +66,10 @@ const CityHome = () => {
                   return (
                     <div
                       className="city-rest-navigation"
-                      onClick={() => handleNavigate(item)}
+                      onClick={() => handleNavigate(item._id)}
                     >
                       <CityResturant
-                        name={item.name}
+                        city_name={city_name}
                         type={item.cuisine}
                         ratings={item.ratings}
                         offer={item.offer}
@@ -125,7 +121,7 @@ const CityHome = () => {
               <h4>Bengali food delivery in {cityName}</h4>
               {bengali.map((item, index) => {
                 if (index < 6) {
-                  return <Suggesstion name={item.name} key={item.id} />;
+                  return <Suggescity_name=city_name} key={item.id} />;
                 }
               })}
             </div>
@@ -133,7 +129,7 @@ const CityHome = () => {
               <h4>Indian food delivery in {cityName}</h4>
               {indian.map((item, index) => {
                 if (index < 6) {
-                  return <Suggesstion name={item.name} key={item.id} />;
+                  return <Suggescity_name=city_name} key={item.id} />;
                 }
               })}
             </div>
@@ -141,7 +137,7 @@ const CityHome = () => {
               <h4>fast food delivery in {cityName}</h4>
               {fastFood.map((item, index) => {
                 if (index < 6) {
-                  return <Suggesstion name={item.name} key={item.id} />;
+                  return <Suggescity_name=city_name} key={item.id} />;
                 }
               })}
             </div> */}

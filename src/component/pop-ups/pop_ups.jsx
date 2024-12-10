@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./pop-ups.css";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { LargeBtn, RoundBtnWithSymbol } from "../buttons/buttons";
 import { RxCross1 } from "react-icons/rx";
+import { totalCounter } from "../../myFunc/myfunc";
+
 export const FindFoodPopup = ({ onClick }) => {
   return (
     <>
@@ -58,8 +60,15 @@ export const AddaddressPopup = () => {
   );
 };
 
-export const ProductDetails = ({ product, onClick }) => {
-  console.log("product from product Detail page", product);
+export const ProductDetails = ({
+  product,
+  onClick,
+  addPrice,
+  subPrice,
+  totalPrice,
+  productList,
+}) => {
+  console.log("totalPrice", totalPrice);
   return (
     <>
       <div className="product-detail-container">
@@ -104,9 +113,9 @@ export const ProductDetails = ({ product, onClick }) => {
           </div>
           <div className="product-detail-footer">
             <div className="product-detail-footer-left">
-              <RoundBtnWithSymbol icon={<FaPlus />} />
-              1
-              <RoundBtnWithSymbol icon={<FaMinus />} />
+              <RoundBtnWithSymbol icon={<FaPlus />} onClick={addPrice} />(
+              {productList?.length}){totalPrice && <p>({totalPrice})</p>}
+              <RoundBtnWithSymbol icon={<FaMinus />} onClick={subPrice} />
             </div>
             <div className="product-detail-footer-right">
               <LargeBtn text={"Add to cart"} />

@@ -8,7 +8,7 @@ const CityGrid = () => {
   const navigate = useNavigate();
   const handleNavigate = (city) => {
     console.log(city);
-    navigate("/city", { state: city });
+    navigate(`/city/${city}`);
   };
 
   return (
@@ -20,7 +20,7 @@ const CityGrid = () => {
             <div
               className="city-grid-child"
               key={index}
-              onClick={() => handleNavigate(city)}
+              onClick={() => handleNavigate(city.name.toLowerCase())}
             >
               <img src={city.image} alt={city.name} />
               <a href="">{city.name}</a>

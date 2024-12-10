@@ -1,70 +1,98 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import citydata from "../../utils/allRestaurants.json";
 // import cuisine from "../../utils/cuisines.json";
 import "./restaurant-profile.css";
 import { FaFire } from "react-icons/fa";
 import AddressBar from "../../component/addressbar/AddressBar";
 import BreadCrumb from "../../component/breadcrumbs/BreadCrumb";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import {
   DealsCard,
   ItemProfileCard,
   ProfileCard,
 } from "../../component/Cards/Cards";
 import { useState } from "react";
-import { toggler } from "../../myFunc/myfunc";
+import { deleteItems, toggler, totalCounter } from "../../myFunc/myfunc";
 import { MenuSearchBar } from "../../component/bars/Bars";
 import { ProductDetails } from "../../component/pop-ups/pop_ups";
+import Cart from "../../component/cart/Cart";
+import { cartContext } from "../../context/CartContext";
 
 const RestaurantProfile = () => {
-  const { state } = useLocation();
-  const {
-    no,
-    id,
-    name,
-    image,
-    ratings,
-    reviews,
-    offer,
-    city,
-    cuisine,
-    address,
-  } = state;
-  const [type, setType] = useState(null);
-  const [product, setproduct] = useState(null);
+  const { product, setproduct, productList, setProductList } =
+    useContext(cartContext);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [cuisine, setcuisine] = useState(null);
   const [loading, setloading] = useState(true);
   const [showProductDetail, setshowProductDetail] = useState(false);
+  const { rest_id } = useParams();
+  const [singlerestaurent, setsinglerestaurent] = useState(null);
+
+  useEffect(() => {
+    fetch(
+      `https://restaurant-server-ni4y.onrender.com/api/restaurant/${rest_id}`
+    )
+      .then((res) => res.json())
+      .then((data) => setsinglerestaurent(data));
+  }, []);
 
   const handleProduct = (productData) => {
     setshowProductDetail(true);
     setproduct(productData);
+
     alert("testing product");
+    console.log("context", product);
+  };
+  const handleaddprice = () => {
+    alert("testing");
+    {
+      product &&
+        setProductList([
+          ...productList,
+          { item: product?.name, price: product?.price },
+        ]);
+      // setProductContext(productList);
+    }
+    console.log("totalprice:", totalPrice);
   };
 
-  const restaurantType = state.cuisine;
+  const handlesubPrice = () => {
+    alert("testing");
+    setProductList((prev) => prev.slice(0, -1));
+  };
+  console.log("singlerestaurant", singlerestaurent);
+
   useEffect(() => {
-    fetch(
-      `https://restaurant-server-ni4y.onrender.com/api/food-items/${restaurantType}`
-    )
-      .then((res) => res.json())
+    singlerestaurent &&
+      fetch(
+        `https://restaurant-server-ni4y.onrender.com/api/food-items/${singlerestaurent[0].cuisine}`
+      )
+        .then((res) => res.json())
 
-      .then((data) => setType(data))
-      .catch((error) => console.error("data not found", error))
-      .finally(() => setloading(false));
-  }, []);
-  const popularDishes = type && type.filter((item) => item.tag === "Popular");
+        .then((data) => setcuisine(data))
+        .catch((error) => console.error("data not found", error))
+        .finally(() => setloading(false));
+  }, [singlerestaurent]);
 
-  console.log("recieved the data");
-  console.log(type);
-  // console.log("popular");
-  // console.log(popularDishes);
+  const popularDishes =
+    cuisine && cuisine.filter((item) => item.tag === "Popular");
+
+  useEffect(() => {
+    {
+      productList && setTotalPrice(totalCounter(productList));
+    }
+  }, [productList]);
+
+  if (!singlerestaurent || !cuisine) {
+    return <h2>Loading</h2>;
+  }
 
   return (
     <div className="restaurant-profile-container">
       <AddressBar cityName={"sylhet"} />
       <BreadCrumb cityName={"sylhet"} />
       <div className="restaurant-profile-top">
-        <ProfileCard {...state} />
+        <ProfileCard {...singlerestaurent[0]} />
       </div>
       <div className="restaurant-profile-deals">
         <DealsCard />
@@ -109,8 +137,8 @@ const RestaurantProfile = () => {
           </div>
         </div>
         <div className="restaurant-profile-popular-items">
-          {type &&
-            type
+          {cuisine &&
+            cuisine
               .filter((item) => item.cuisine !== "Popular")
               .map((item, index) => {
                 return (
@@ -134,11 +162,17 @@ const RestaurantProfile = () => {
           <ProductDetails
             product={product}
             onClick={() => toggler(setshowProductDetail)}
+            addPrice={handleaddprice}
+            subPrice={handlesubPrice}
+            totalPrice={totalPrice}
+            productList={productList}
           />
         </div>
       )}
-
       {/* product-deatil-pop-up */}
+      {/* cart */}
+      <div className="restaurant-profile-cart">{product && <Cart />}</div>
+      {/* cart */}
     </div>
   );
 };

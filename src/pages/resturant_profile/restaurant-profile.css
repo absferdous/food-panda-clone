@@ -45,6 +45,11 @@
   z-index: 10;
   top: 15rem;
 }
+
+.restaurant-profile-cart {
+  visibility: hidden;
+}
+
 /* responsive */
 @media (min-width: 768px) {
   .restaurant-profile-popular-items {

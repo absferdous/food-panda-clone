@@ -27,7 +27,7 @@ const HomePage = () => {
           ]}
         />
       </div>
-      <div className="homepage-section">
+      <div className="homepage-section-city-grid">
         <CityGrid />
       </div>
       <AppDownLoadSection />

@@ -2,7 +2,7 @@
 import { SignUpForm } from "./component/forms/forms";
 import Navbar from "./component/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CityHome from "./pages/city_profile/city_home";
+import CityHome from "./pages/city_profile/City_home";
 import RestaurantProfile from "./pages/resturant_profile/RestaurantProfile";
 import PartnerReg from "./pages/homepage/partner-registration/home_partner_reg";
 import Footer from "./pages/homepage/layouts/footer/Footer";
@@ -44,7 +44,7 @@ function App() {
             }
           />
           <Route
-            path="/city"
+            path="/city/:city_name"
             element={
               <DefaultLayout>
                 <CityHome />
@@ -52,7 +52,7 @@ function App() {
             }
           />
           <Route
-            path="/rest-profile"
+            path="/rest-profile/:rest_id"
             element={
               <DefaultLayout>
                 <RestaurantProfile />
