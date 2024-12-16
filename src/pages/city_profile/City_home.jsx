@@ -25,8 +25,8 @@ const CityHome = () => {
       .catch((error) => console.error("error fetching data", error))
       .finally(() => setloading(false));
   }, []);
-  // console.log("testing api fetching");
-  // console.log(newCityData);
+  console.log("testing api fetching");
+  console.log(newCityData);
   // const newFliterdCity = newCityData.filter(
   //   (item) => item.city === city_name.toLowerCase()
   // );
@@ -75,6 +75,7 @@ const CityHome = () => {
                         offer={item.offer}
                         image={item.image}
                         reviews={item.reviews}
+                        name={item.name}
                       />
                       {/* console.log(item); */}
                     </div>

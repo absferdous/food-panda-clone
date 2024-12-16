@@ -69,6 +69,7 @@ export const ProductDetails = ({
   productList,
 }) => {
   console.log("totalPrice", totalPrice);
+  // console.log("product from product detail", product);
   return (
     <>
       <div className="product-detail-container">
@@ -76,7 +77,7 @@ export const ProductDetails = ({
           <div className="product-detail-banner-button">
             <RoundBtnWithSymbol icon={<RxCross1 />} onClick={onClick} />
           </div>
-          <img src={product.image} alt="image not available" />
+          <img src={product?.image} alt="image not available" />
         </div>
         <div className="product-detail-content">
           <div className="product-detail-title">
@@ -106,24 +107,28 @@ export const ProductDetails = ({
             <div className="product-detail-item-not-available-option">
               <details>
                 <summary>remove it from my order</summary>
+                <div className="summary-options">
+                  <button>remove it from my order</button>
+                  <button>
+                    call <menu type="toolbar"></menu>
+                  </button>
+                </div>
               </details>
-              <p>remove it from my order</p>
-              <p>call me</p>
             </div>
           </div>
           <div className="product-detail-footer">
             <div className="product-detail-footer-left">
-              <RoundBtnWithSymbol icon={<FaPlus />} onClick={addPrice} />(
-              {productList?.length}){totalPrice && <p>({totalPrice})</p>}
+              <RoundBtnWithSymbol icon={<FaPlus />} onClick={addPrice} />
+              {productList?.length}
               <RoundBtnWithSymbol icon={<FaMinus />} onClick={subPrice} />
             </div>
             <div className="product-detail-footer-right">
-              <LargeBtn text={"Add to cart"} />
+              <LargeBtn icon={<FaPlus />} text={"Add to cart"} />
             </div>
           </div>
         </div>
       </div>
-      <h2>Product details</h2>
+      {/* <h2>Product details</h2> */}
     </>
   );
 };

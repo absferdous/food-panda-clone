@@ -51,8 +51,25 @@
 }
 
 /* responsive */
-@media (min-width: 768px) {
+@media (min-width: 768px) and( max-width:900px) {
   .restaurant-profile-popular-items {
-    width: 60%;
+    width: 450px;
+
+    /* background-color: aliceblue; */
+  }
+
+  .restaurant-profile-menu {
+    columns: 2 150px;
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
+}
+
+@media (min-width: 902px) {
+  .restaurant-profile-menu {
+    width: 650px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
   }
 }

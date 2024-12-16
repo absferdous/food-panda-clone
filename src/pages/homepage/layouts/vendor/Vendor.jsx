@@ -3,7 +3,7 @@ import "./vendor.css";
 
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
-import { useNavigateWithScroll } from "../../../../hooks/MyHooks";
+import { useNavigateWithScroll } from "../../../../hooks/useMyHooks";
 
 const Vendor = ({ heading, imgurl, subHeading, paragraph = [] }) => {
   const navigate = useNavigateWithScroll();

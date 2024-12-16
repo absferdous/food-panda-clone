@@ -4,6 +4,7 @@
   padding: 1em;
   border-radius: 10px;
   width: 400px;
+  height: 200px;
   background-color: #fff;
 
   /* height: 200px; */
@@ -45,47 +46,64 @@
 /* -------------------------------------product-detail-popup */
 .product-detail-container {
   background-color: white;
-  border-radius: 8px;
-  width: 100%;
-  height: 600px;
-  overflow: scroll;
-  padding: 1em;
+  border-radius: 10px;
+  /* border: 1px solid grey; */
+  width: 400px;
+  height: 660px;
+  /* height: 200vh; */
+  overflow: hidden;
+  /* padding: 1em; */
+  /* z-index: 15; */
   p {
     color: grey;
+    font-size: 15px;
   }
 
   h3 {
-    margin-top: 1em;
+    margin-top: 10px;
   }
 }
-.product-detail-banner {
+/* .product-detail-banner {
   width: 100%;
-  height: 300px;
-  background-color: lightblue;
-  border-radius: 10px;
+  /* box-sizing: border-box; */
+
+.product-detail-instructions {
+  /* gap: 1em; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  justify-content: start;
+  /* align-items: center; */
 }
 .product-detail-instructions-input input {
   width: 100%;
-  height: 200px;
+  height: 70px;
   border: 1px solid grey;
   border-radius: 10px;
-  padding: 1em;
+  padding: 10px;
   text-align: start;
   /* margin-bottom: auto; */
 }
 .product-detail-banner {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  margin: 0;
+  padding: 0;
   overflow: hidden;
   position: relative;
+  height: 231px;
 }
 .product-detail-banner img {
   height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
 }
 .product-detail-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1em;
+  margin-top: 23px;
+  gap: 5px;
 }
 .product-detail-footer-left {
   display: flex;
@@ -103,10 +121,37 @@
 .product-detail-content {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 5px;
+  padding: 10px;
 }
 .product-detail-banner-button {
   position: absolute;
   right: 9px;
   top: 9px;
 }
+.product-detail-item-not-available-option {
+  summary {
+    padding: 10px;
+    /* background-color: red; */
+    border-radius: 10px;
+    border: none;
+  }
+}
+.product-detail-item-not-available-option summary {
+  padding: 0.4em;
+}
+
+.summary-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  button {
+    /* background-color: red; */
+    padding-block: 12px;
+    font-size: large;
+    border-bottom: 1px solid grey;
+  }
+}
+
+/* responsive */

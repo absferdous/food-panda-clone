@@ -28,7 +28,7 @@ const CityResturant = ({ name, type, ratings, offer, image, reviews }) => {
         </div>
         <div className="cityresturant-footer">
           <div className="cityresturant-footer-left">
-            <h3 className="text-ellipsis">{name}</h3>
+            <h3>{name}</h3>
             <p>{type}</p>
           </div>
           <div className="cityresturant-footer-right">

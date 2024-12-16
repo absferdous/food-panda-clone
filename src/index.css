@@ -61,3 +61,33 @@ h4 {
 .branding-logos {
   width: 150px;
 }
+.common-button {
+  background-color: #007bff; /* Primary color */
+  color: white; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Add some spacing */
+  font-size: 16px; /* Adjust font size */
+  font-weight: 500; /* Slightly bold */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+/* Hover effect */
+.common-button:hover {
+  background-color: #0056b3; /* Darker shade for hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Focus effect */
+.common-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Focus ring */
+}
+
+/* Disabled state */
+.common-button:disabled {
+  background-color: #c0c0c0; /* Gray background */
+  cursor: not-allowed; /* Disable pointer cursor */
+  opacity: 0.6; /* Reduced opacity */
+}
