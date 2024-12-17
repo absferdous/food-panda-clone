@@ -7,6 +7,8 @@ const CartContextComponent = (props) => {
   const [productList, setProductList] = useState([]);
 
   const [product, setproduct] = useState([null]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [showCart, setshowCart] = useState(false);
 
   const value = {
     productContext,
@@ -15,6 +17,10 @@ const CartContextComponent = (props) => {
     setproduct,
     productList,
     setProductList,
+    totalPrice,
+    setTotalPrice,
+    showCart,
+    setshowCart,
   };
   return (
     <cartContext.Provider value={value}>{props.children}</cartContext.Provider>

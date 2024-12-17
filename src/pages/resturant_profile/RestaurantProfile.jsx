@@ -27,10 +27,15 @@ import Menu from "../../component/menu/Menu";
 // import { useQuery } from "@tanstack/react-query";
 
 const RestaurantProfile = () => {
-  const { product, setproduct, productList, setProductList } =
-    useContext(cartContext);
-  const [totalPrice, setTotalPrice] = useState(0);
-  // const [cuisine, setcuisine] = useState(null);
+  const {
+    product,
+    setproduct,
+    productList,
+    setProductList,
+    totalPrice,
+    setTotalPrice,
+  } = useContext(cartContext);
+
   const [showProductDetail, setshowProductDetail] = useState(false);
   const { rest_id } = useParams();
   //Fetch single-restaurant data
@@ -60,30 +65,9 @@ const RestaurantProfile = () => {
   console.log("single-restaureant", singlerestaurent);
   console.log("cuisine", cuisine);
 
-  const handleProduct = (productData) => {
-    setshowProductDetail(true);
-    setproduct(productData);
-
-    // console.log("testing product");
-  };
+  // console.log("testing product");
   console.log("context", product);
-  const handleaddprice = () => {
-    console.log("testing handleaddprice");
-    {
-      product &&
-        setProductList([
-          ...productList,
-          { item: product?.name, price: product?.price },
-        ]);
-      // setProductContext(productList);
-    }
-    console.log("totalprice:", totalPrice);
-  };
 
-  const handlesubPrice = () => {
-    console.log("testing handle sub price");
-    setProductList((prev) => prev.slice(0, -1));
-  };
   console.log("singlerestaurant", singlerestaurent);
 
   console.log("testing cuisine data using query", cuisine);
@@ -123,19 +107,6 @@ const RestaurantProfile = () => {
       </div>
       {/* product-deatil-pop-up */}
 
-      {/* {showProductDetail &&
-        product(
-          <div className="restaurant-profile-product-detail">
-            <ProductDetails
-              product={product}
-              onClick={() => toggler(setshowProductDetail)}
-              addPrice={handleaddprice}
-              subPrice={handlesubPrice}
-              totalPrice={totalPrice}
-              productList={productList}
-            />
-          </div>
-        )} */}
       {/* product-deatil-pop-up */}
       {/* cart */}
       <div className="restaurant-profile-cart">{product && <Cart />}</div>

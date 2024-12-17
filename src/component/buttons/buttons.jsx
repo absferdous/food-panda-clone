@@ -51,7 +51,7 @@ export const LanguageBtn = ({ icon, text, onclick, id, icon2 }) => {
 
 export const LargeBtn = ({ icon, text, onClick }) => {
   return (
-    <div className="largebtn">
+    <div className="largebtn" onClick={onClick}>
       <button>{text}</button>
     </div>
   );

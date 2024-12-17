@@ -1,0 +1,26 @@
+.temp-cart-container {
+  /* margin: 0 auto; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95vw;
+  padding: 1em;
+  background-color: var(--primary-pink);
+  color: white;
+  font-weight: 500;
+  border-radius: 15px;
+  transition: linear ease 0.3s;
+}
+.temp-cart-container:hover {
+  background-color: #9a316b;
+  transform: skew(0.1);
+}
+.temp-cart-left {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.temp-cart-middle {
+}
+.temp-cart-right {
+}

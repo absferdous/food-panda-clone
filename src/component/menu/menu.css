@@ -6,11 +6,23 @@
 
 .menu-item {
   margin-block: 1.7em;
-  background-color: rgb(251, 251, 251);
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  box-shadow: 6px 8px 20px 12px #f1f1f1;
 }
 .single-product-detail {
   position: fixed;
-  top: 0;
-  left: 3em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.temp-price-detail {
+  position: fixed;
+  bottom: 10px;
+  right: 8px;
+  z-index: 25;
 }

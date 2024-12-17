@@ -4,6 +4,8 @@ import { FaPlus, FaMinus } from "react-icons/fa6";
 import { LargeBtn, RoundBtnWithSymbol } from "../buttons/buttons";
 import { RxCross1 } from "react-icons/rx";
 import { totalCounter } from "../../myFunc/myfunc";
+import { cartContext } from "../../context/CartContext";
+import { useContext } from "react";
 
 export const FindFoodPopup = ({ onClick }) => {
   return (
@@ -61,14 +63,15 @@ export const AddaddressPopup = () => {
 };
 
 export const ProductDetails = ({
-  product,
   onClick,
   addPrice,
   subPrice,
   totalPrice,
   productList,
+  handleTempCart,
 }) => {
   console.log("totalPrice", totalPrice);
+  const { product, setproduct } = useContext(cartContext);
   // console.log("product from product detail", product);
   return (
     <>
@@ -81,11 +84,11 @@ export const ProductDetails = ({
         </div>
         <div className="product-detail-content">
           <div className="product-detail-title">
-            <h3>{product.name}</h3>
+            <h3>{product?.name}</h3>
           </div>
           <div className="product-detail-price">{product.price_desc}</div>
           <div className="product-detail-description">
-            <p>{product.detail}</p>
+            <p>{product?.detail}</p>
           </div>
           <div className="product-detail-instructions">
             <div className="product-detail-instructions-title">
@@ -123,7 +126,7 @@ export const ProductDetails = ({
               <RoundBtnWithSymbol icon={<FaMinus />} onClick={subPrice} />
             </div>
             <div className="product-detail-footer-right">
-              <LargeBtn icon={<FaPlus />} text={"Add to cart"} />
+              <LargeBtn text={"Add to cart"} onClick={handleTempCart} />
             </div>
           </div>
         </div>
