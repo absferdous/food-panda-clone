@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import citydata from "../../utils/allRestaurants.json";
 // import cuisine from "../../utils/cuisines.json";
 import "./restaurant-profile.css";
@@ -35,7 +35,7 @@ const RestaurantProfile = () => {
     totalPrice,
     setTotalPrice,
   } = useContext(cartContext);
-
+  const sectionrefs = useRef({});
   const [showProductDetail, setshowProductDetail] = useState(false);
   const { rest_id } = useParams();
   //Fetch single-restaurant data
@@ -97,11 +97,11 @@ const RestaurantProfile = () => {
         <DealsCard />
       </div>
       <div className="restaurant-profile-search-bar">
-        <MenuSearchBar />
+        <MenuSearchBar cuisine={cuisine} sectionrefs={sectionrefs} />
       </div>
-      <div className="restaurant-profile-menu" onClick={() => handleProduct()}>
+      <div className="restaurant-profile-menu">
         {/* main */}
-        <Menu cuisine={cuisine} />
+        <Menu cuisine={cuisine} sectionrefs={sectionrefs} />
 
         {/* main */}
       </div>

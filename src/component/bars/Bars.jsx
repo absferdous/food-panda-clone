@@ -1,8 +1,18 @@
 import { RoundBtnWithSymbol } from "../buttons/buttons";
 import { FaChevronLeft } from "react-icons/fa6";
 import { SlMagnifier } from "react-icons/sl";
+import { FaAngleRight } from "react-icons/fa6";
 import "./bars.css";
-export const MenuSearchBar = () => {
+export const MenuSearchBar = ({ cuisine, sectionrefs }) => {
+  const uniqueCuisine = [...new Set(cuisine.map((item) => item.tag))];
+  console.log("uniqcuisine", uniqueCuisine);
+
+  const handleScrollToSection = (tag) => {
+    const section = sectionrefs.current[tag];
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
   return (
     <>
       <div className="menu-searchbar-container">
@@ -14,33 +24,16 @@ export const MenuSearchBar = () => {
             <RoundBtnWithSymbol icon={<FaChevronLeft />} />
           </div>
           <div className="menu-searchbar-catagories">
-            <li>
-              <a href="">Popular(6)</a>
-            </li>
-            <li>
-              <a href="">Special Combos(2)</a>
-            </li>
-            <li>
-              <a href="">Curry(1)</a>
-            </li>
-            <li>
-              <a href="">Kacchi(1)</a>
-            </li>
-            <li>
-              <a href="">Kachhi Plater(2)</a>
-            </li>
-            <li>
-              <a href="">latter(2)</a>
-            </li>
-            <li>
-              <a href="">Sides(2)</a>
-            </li>
-            <li>
-              <a href="">Bevarage(2)</a>
-            </li>
+            {uniqueCuisine.map((item) => (
+              <li key={item}>
+                <a href="#" onClick={() => handleScrollToSection(item)}>
+                  {item}
+                </a>
+              </li>
+            ))}
           </div>
           <div className="menu-searchbar-right-arrow">
-            <RoundBtnWithSymbol />
+            <RoundBtnWithSymbol icon={<FaAngleRight />} />
           </div>
         </div>
       </div>

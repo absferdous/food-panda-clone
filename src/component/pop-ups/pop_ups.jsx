@@ -67,12 +67,21 @@ export const ProductDetails = ({
   addPrice,
   subPrice,
   totalPrice,
-  productList,
+
   handleTempCart,
+  count,
 }) => {
   console.log("totalPrice", totalPrice);
-  const { product, setproduct } = useContext(cartContext);
+  const { product, setproduct, productList, setProductList } =
+    useContext(cartContext);
   // console.log("product from product detail", product);
+  console.log("productList from product detail", productList);
+  console.log("producQuantity from product detail", productList.quantity);
+  // find the product
+  const productInList = productList.find((item) => item.item === product.name);
+  const productQuantity = productInList ? productInList.quantity : 0;
+  console.log("productInList", productInList);
+  console.log("productQuantity", productQuantity);
   return (
     <>
       <div className="product-detail-container">
@@ -122,7 +131,8 @@ export const ProductDetails = ({
           <div className="product-detail-footer">
             <div className="product-detail-footer-left">
               <RoundBtnWithSymbol icon={<FaPlus />} onClick={addPrice} />
-              {productList?.length}
+              {productQuantity}
+
               <RoundBtnWithSymbol icon={<FaMinus />} onClick={subPrice} />
             </div>
             <div className="product-detail-footer-right">

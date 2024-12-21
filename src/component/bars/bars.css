@@ -34,3 +34,7 @@
   align-items: center;
   gap: 4em;
 }
+.menu-searchbar-right-arrow {
+  position: absolute;
+  left: 40rem;
+}
