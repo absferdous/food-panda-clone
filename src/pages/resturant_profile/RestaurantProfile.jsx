@@ -34,6 +34,10 @@ const RestaurantProfile = () => {
     setProductList,
     totalPrice,
     setTotalPrice,
+    showCart,
+    setshowCart,
+    singlerestaurantContext,
+    setsinglerestaurantContext,
   } = useContext(cartContext);
   const sectionrefs = useRef({});
   const [showProductDetail, setshowProductDetail] = useState(false);
@@ -48,6 +52,9 @@ const RestaurantProfile = () => {
     url: `https://restaurant-server-ni4y.onrender.com/api/restaurant/${rest_id}`,
   });
   const cuisineId = singlerestaurent && singlerestaurent[0]?.cuisine;
+  if (singlerestaurent) {
+    setsinglerestaurantContext(singlerestaurent);
+  }
   //Fetch cusine data
 
   const {
@@ -87,31 +94,41 @@ const RestaurantProfile = () => {
   }
 
   return (
-    <div className="restaurant-profile-container">
-      <AddressBar cityName={"sylhet"} />
-      <BreadCrumb cityName={"sylhet"} />
-      <div className="restaurant-profile-top">
-        <ProfileCard {...singlerestaurent[0]} />
-      </div>
-      <div className="restaurant-profile-deals">
-        <DealsCard />
-      </div>
-      <div className="restaurant-profile-search-bar">
-        <MenuSearchBar cuisine={cuisine} sectionrefs={sectionrefs} />
-      </div>
-      <div className="restaurant-profile-menu">
-        {/* main */}
-        <Menu cuisine={cuisine} sectionrefs={sectionrefs} />
+    <>
+      {showCart ? (
+        <>
+          <Cart />
+        </>
+      ) : (
+        <>
+          <div className="restaurant-profile-container">
+            <AddressBar cityName={"sylhet"} />
+            <BreadCrumb cityName={"sylhet"} />
+            <div className="restaurant-profile-top">
+              <ProfileCard {...singlerestaurent[0]} />
+            </div>
+            <div className="restaurant-profile-deals">
+              <DealsCard />
+            </div>
+            <div className="restaurant-profile-search-bar">
+              <MenuSearchBar cuisine={cuisine} sectionrefs={sectionrefs} />
+            </div>
+            <div className="restaurant-profile-menu">
+              {/* main */}
+              <Menu cuisine={cuisine} sectionrefs={sectionrefs} />
 
-        {/* main */}
-      </div>
-      {/* product-deatil-pop-up */}
+              {/* main */}
+            </div>
+            {/* product-deatil-pop-up */}
 
-      {/* product-deatil-pop-up */}
-      {/* cart */}
-      <div className="restaurant-profile-cart">{product && <Cart />}</div>
-      {/* cart */}
-    </div>
+            {/* product-deatil-pop-up */}
+            {/* cart */}
+            <div className="restaurant-profile-cart">{product && <Cart />}</div>
+            {/* cart */}
+          </div>
+        </>
+      )}
+    </>
   );
 };
 

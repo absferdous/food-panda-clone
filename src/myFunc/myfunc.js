@@ -7,7 +7,7 @@ export const toggler = (toggleValue) => {
 
 export const totalCounter = (data) => {
   console.log("data from myfunction", data);
-  const price = data.reduce((acc, item) => acc + item.price, 0);
+  const price = data.reduce((acc, item) => acc + item.price * item.quantity, 0);
   console.log("price from my function", price);
   return price;
 };

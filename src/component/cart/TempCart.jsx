@@ -4,6 +4,7 @@ import React from "react";
 import { GiForkKnifeSpoon } from "react-icons/gi";
 import { cartContext } from "../../context/CartContext";
 import { useContext } from "react";
+import { toggler } from "../../myFunc/myfunc";
 const TempCart = ({ onClick }) => {
   const {
     product,
@@ -12,7 +13,13 @@ const TempCart = ({ onClick }) => {
     setProductList,
     totalPrice,
     setTotalPrice,
+    showCart,
+    setshowCart,
   } = useContext(cartContext);
+
+  const handleShowCart = () => {
+    setshowCart(true);
+  };
 
   return (
     <>
@@ -22,7 +29,7 @@ const TempCart = ({ onClick }) => {
             <GiForkKnifeSpoon />
             <h3>{productList.length}</h3>
           </div>
-          <div className="temp-cart-middle">
+          <div className="temp-cart-middle" onClick={handleShowCart}>
             <h3>view Cart</h3>
           </div>
           <div className="temp-cart-right">
