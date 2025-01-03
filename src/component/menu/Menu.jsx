@@ -55,6 +55,7 @@ const Menu = ({ cuisine, sectionrefs }) => {
             price: product.price,
             quantity: 1,
             required: product.required,
+            image: product.image,
           },
         ]);
       }

@@ -5,7 +5,9 @@ import { GiForkKnifeSpoon } from "react-icons/gi";
 import { cartContext } from "../../context/CartContext";
 import { useContext } from "react";
 import { toggler } from "../../myFunc/myfunc";
+import { useNavigate } from "react-router-dom";
 const TempCart = ({ onClick }) => {
+  const navTOapage = useNavigate();
   const {
     product,
     setproduct,
@@ -18,7 +20,7 @@ const TempCart = ({ onClick }) => {
   } = useContext(cartContext);
 
   const handleShowCart = () => {
-    setshowCart(true);
+    navTOapage("/cart-home");
   };
 
   return (

@@ -1,0 +1,44 @@
+.test-cart-container {
+  /* display: flex; */
+  background-color: white;
+  width: 100%;
+  position: absolute;
+  top: 2rem;
+  left: 0rem;
+}
+
+.test-cart-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 10px;
+  border-bottom: 1px solid grey;
+}
+.test-cart-nav-btn {
+  /* background-color: black; */
+}
+.test-car-delivery-options {
+  background-color: #f1f1f1;
+
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+
+  button {
+    padding: 10px 15px;
+    background-color: var(--primary-grey);
+    border-radius: 10px;
+  }
+}
+.pickup {
+  /* background-color: #fff; */
+  border: 1px solid saddlebrown;
+}
+.pickup:active {
+  background-color: var(--primary-grey);
+}
+.delivery {
+  background-color: var(--primary-grey);
+}
+.delivery:active {
+  background-color: white;
+}

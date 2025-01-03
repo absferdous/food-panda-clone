@@ -38,6 +38,8 @@ const RestaurantProfile = () => {
     setshowCart,
     singlerestaurantContext,
     setsinglerestaurantContext,
+    cuisineContext,
+    setCuisineContext,
   } = useContext(cartContext);
   const sectionrefs = useRef({});
   const [showProductDetail, setshowProductDetail] = useState(false);
@@ -69,6 +71,7 @@ const RestaurantProfile = () => {
     enabled: !!cuisineId,
   });
 
+  cuisine && setCuisineContext(cuisine);
   console.log("single-restaureant", singlerestaurent);
   console.log("cuisine", cuisine);
 

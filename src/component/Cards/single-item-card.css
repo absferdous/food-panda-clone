@@ -1,0 +1,42 @@
+.single-item-card-container {
+  width: 100%;
+  position: relative;
+  background-color: var(--primary-grey);
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  border-radius: 20px;
+  overflow-x: auto;
+}
+
+.single-item-card-btn {
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+}
+.single-item-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  p {
+    font-size: small;
+  }
+}
+
+.single-item-card-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    height: 100%;
+  }
+}
+
+.single-item-card-slider {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex-shrink: 0;
+}

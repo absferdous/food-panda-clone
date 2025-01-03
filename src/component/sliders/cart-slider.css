@@ -1,0 +1,27 @@
+.cart-slider-left-button {
+  position: absolute;
+  right: 2rem;
+  top: 21rem;
+  background: black;
+}
+.cart-slider-container {
+  background-color: hsl(0deg 1.64% 88.04%);
+  width: 100%;
+  padding-block: 1em;
+  overflow-x: auto;
+}
+.cart-slider-content {
+  display: flex;
+  gap: 5px;
+}
+.cart-slider-top {
+  margin-bottom: 15px;
+  p {
+    font-size: smaller;
+  }
+}
+.cart-slider-item-wrapper {
+  display: flex;
+  gap: 1rem;
+  padding-left: 1rem;
+}

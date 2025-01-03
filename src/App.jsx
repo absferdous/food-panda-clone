@@ -8,6 +8,7 @@ import PartnerReg from "./pages/homepage/partner-registration/home_partner_reg";
 import Footer from "./pages/homepage/layouts/footer/Footer";
 import HomePage from "./pages/homepage/HomePage";
 import PlayGround from "./pages/play-ground/PlayGround";
+import CartHome from "./pages/cart-home/CartHome";
 // import { FindFoodPopup } from "./component/pop-ups/pop_ups";
 // import HomePage from "./pages/homepage/HomePage";
 // import Footer from "./pages/homepage/layouts/footer/Footer";
@@ -65,6 +66,14 @@ function App() {
               <MinimalLayout>
                 <PartnerReg />
               </MinimalLayout>
+            }
+          />
+          <Route
+            path="/cart-home"
+            element={
+              <DefaultLayout>
+                <CartHome />
+              </DefaultLayout>
             }
           />
           {/* <Route path="*" element={<NotFound />} /> */}
